@@ -1,0 +1,46 @@
+1) Посмотреть где я ---- pdw
+2) Создать папку ---- mkdir f_1
+3) Зайти в папку ----  cd f_1
+4) Создать 3 папки ---- mkdir f_1 f_2 f_3 >> ls -la
+5) Зайти в любоую папку ----  cd f_2
+6) Создать 5 файлов (3 txt, 2 json) ---- touch text_1.txt text_2.txt text_3.txt json_1.json json_2.json
+7) Создать 3 папки mkdir folder_1 folder_2 folder_3
+8. Вывести список содержимого папки			 -------	 ls -la
+9) + Открыть любой txt файл 			     -------	 vim text_1.txt 
+10) + написать туда что-нибудь, любой текст. ------- 	1) afkljs
+							2) olkgjdfg
+11) + сохранить и выйти.					 -------    press esc > :wq > enter			
+12) Выйти из папки на уровень выше		-------- cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.  -------  mv f_2/text_1.txt f_1/text_1.txt
+										  mv f_2/text_2.txt f_3/text_2.txt
+										 mv f_2/text_3.txt f_1/text_3.txt
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.  -------  cp f_2/json_1.json f_3/json_1.json	
+										cp f_1/text_1.txt f_3/text_1.txt
+15) Найти файл по имени		------- find . -name "text_1*"
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.	  ------ tail -f text_2.txt | grep as
+17) вывести несколько первых строк из текстового файла	-------  head -n2 text_2.txt
+18) вывести несколько последних строк из текстового файла ------ tail -n2 text_2.txt
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.  ------- less text_3.txt 
+20) вывести дату и время  ------ date +%c
+
+
+Доп задание*
+1)Отправить http запрос на сервер.http://162.55.220.72:5005/terminal-hw-request  --------- curl http://162.55.220.72:5005/terminal-hw-request
+											   curl http://162.55.220.72:5005/get_method?name=(Dima_Shefchik)&age=(29)	
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13 ----
+nano skript1.sh
+( в открывшемся окне вводим)
+#!/bin/bash
+
+cd f_1
+mkdir sk_1 sk_2 sk_3
+cd sk_2
+touch sk_text_1.txt sk_text_2.txt sk_json_1.json sk_json_2.json
+ls -la
+cd ..
+mv sk_2/sk_text_1.txt sk_1/sk_text_1.txt
+mv sk_2/sk_json_1.json sk_3/sk_json_1.json
+ ( нажимаем shift+x) 
+bash skript1.sh
